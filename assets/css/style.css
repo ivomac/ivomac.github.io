@@ -1,0 +1,253 @@
+/* Default light theme */
+:root {
+  /* Font family variables */
+  --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Gruvbox Light colors */
+  --black: #fbf1c7;
+  --red: #cc241d;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458588;
+  --magenta: #b16286;
+  --cyan: #689d6a;
+  --white: #7c6f64;
+  --brblack: #928374;
+  --brred: #9d0006;
+  --brgreen: #79740e;
+  --bryellow: #b57614;
+  --brblue: #076678;
+  --brmagenta: #8f3f71;
+  --brcyan: #427b58;
+  --brwhite: #3c3836;
+
+  --fg: #3c3836;
+  --bg: #fbf1c7;
+  --brfg: #928374;
+  --brbg: #ebdbb2;
+
+  --link: var(--blue);
+  --brlink: var(--brblue);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Gruvbox Dark colors */
+    --black: #282828;
+    --red: #cc241d;
+    --green: #98971a;
+    --yellow: #d79921;
+    --blue: #458588;
+    --magenta: #b16286;
+    --cyan: #689d6a;
+    --white: #a89984;
+    --brblack: #928374;
+    --brred: #fb4934;
+    --brgreen: #b8bb26;
+    --bryellow: #fabd2f;
+    --brblue: #83a598;
+    --brmagenta: #d3869b;
+    --brcyan: #8ec07c;
+    --brwhite: #ebdbb2;
+
+    --fg: #ebdbb2;
+    --bg: #282828;
+    --brfg: #928374;
+    --brbg: #504945;
+
+    --link: var(--yellow);
+    --brlink: var(--bryellow);
+  }
+}
+
+* {
+  font-family: var(--main-font);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background-color: var(--brbg);
+}
+
+body {
+  font-size: 1em;
+  color: var(--fg);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 50em;
+}
+
+main {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  background-color: var(--bg);
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 0.2em 1em;
+}
+
+div.table {
+  overflow-x: auto;
+}
+
+table {
+  min-width: 100%;
+  /* optional: ensures header rows line up */
+  /* width: 100%; */
+  border-collapse: collapse;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: var(--brlink);
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+img,
+video {
+  background-color: #ffffff;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+div.link {
+  display: block;
+  cursor: pointer;
+  border: none;
+  padding: 0.2em 0.4em;
+  margin: 1em 0.2em;
+  border-radius: 8px;
+}
+
+div.link:hover {
+  background-color: var(--brbg);
+}
+
+.plot-container {
+  align-items: center;
+  max-width: 700px;
+  width: 85%;
+  gap: 1em;
+  margin: 2em auto;
+  display: flex;
+}
+
+.plot-container img {
+  flex: 1;
+  height: auto;
+  object-fit: contain;
+}
+
+.social-links {
+  margin: 1em 0;
+}
+
+.link a,
+.social-links a {
+  margin: 0 0.5em;
+}
+
+.title {
+  width: auto;
+  cursor: pointer;
+  margin: 0.3em 0.5em;
+  padding: 0.3em 0.5em;
+  border-radius: 8px;
+}
+
+.title.show,
+.title:hover {
+  background-color: var(--brbg);
+  color: var(--fg);
+}
+
+.question,
+.answer {
+  display: none;
+  cursor: pointer;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 8px;
+  border-left: 3px solid var(--brblue);
+}
+
+.question.show,
+.answer.show {
+  display: block;
+}
+
+.answer {
+  border-left: 3px solid var(--brred);
+  font-style: italic;
+}
+
+.navbar {
+  background-color: var(--brbg);
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  flex: 0 0 auto;
+  display: block;
+  margin: 0.3em 0.5em;
+  padding: 0.3em 0.5em;
+  border-radius: 8px;
+  background-color: var(--brbg);
+  color: var(--fg);
+}
+
+.navbar a:hover {
+  background-color: var(--brblack);
+  color: var(--bg);
+}
+
+.navbar .active {
+  background-color: var(--link);
+  color: var(--bg);
+}
