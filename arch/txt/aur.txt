@@ -1,0 +1,6 @@
+advcpmv
+lazydocker
+nnn-nerd
+multi-git-status
+qimgv
+zsh-theme-powerlevel10k-git

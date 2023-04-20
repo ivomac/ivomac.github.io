@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+
+<body>
+	<section>
+		<h1 id="home"><a href="/index.html">Arch Linux installation</a></h1>
+	</section>
+
+	<h2>Installation</h2>
+	<pre><code class="language-sh">
+			# iwctl station wlan0 connect &quot;SSID&quot;
+			# export URL=https://ivomac.github.io/arch
+			# curl -s $URL/install.sh &gt; install
+			# install nvme
+			(further nvme actions)
+
+			# install base
+			# cp install /mnt/.../home/(user)
+			# arch-chroot /mnt/...
+
+			# install pac
+			# install post-root
+			# su (user)
+			(add ssh keys)
+
+			$ install post-user
+			$ install yay
+			$ install aur
+			(restart)
+
+			$ install post-reboot
+			$ install manual
+		</code></pre>
+</body>
+
+</html>

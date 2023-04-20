@@ -1,0 +1,79 @@
+# Left to do:
+
+- Add drives to fstab if needed:
+	$ sudo nvim -O /etc/fstab <(lsblk -f)
+
+- Login to google and github
+
+- Login to copilot:
+	$ nvim -c 'Copilot auth'
+
+- Login to gist:
+	$ gist --login
+
+- Pair bluetooth devices manually
+
+- Pacman packages left to install:
+	texlab
+	texlive
+
+- Qbittorrent:
+	* set default folders
+	* add to autostart
+
+- firefox:
+	* backup and restore firefox/sidebery settings (in principle done)
+	* add setup to install
+	* set profile
+
+	* css:
+		- about:config:
+			toolkit.legacyUserProfileCustomizations.stylesheets -> true
+		- stow firefox css in mozilla profile folder
+
+	* search engines:
+		- about:config:
+			browser.urlbar.update2.engineAliasRefresh -> +
+
+		- google ncr:
+			https://www.google.com/search?q=%s&pws=0&gl=us&gws_rd=cr
+
+		- google images:
+			https://www.google.com/search?&pws=0&gl=us&q=%s&udm=2&bih=865&dpr=1.2
+
+		- libgen.is:
+			https://libgen.is/search.php?req=%s&open=0&res=100&view=detailed&phrase=0&column=def
+
+		- 1337x.to:
+			https://1337x.to/sort-search/%s/seeders/desc/1/
+
+		- youtube.com:
+			https://www.youtube.com/results?search_query=%s
+
+- Syncthing:
+	* Copy gitignore to syncthing ignore defaults
+	* Change folder defaults
+	* Changed advanced folder default of conflict files to 0
+	* Set folders (like phone camera)
+
+- Gmail Desktop notifications on Firefox:
+	* Go to Gmail
+	* Scroll down to the "Desktop Notifications" section
+	* Click on the "Click here to enable desktop notifications for Gmail" link
+	* Click on "Allow" in the pop-up window
+	* Click on "Save Changes" at the bottom of the page
+
+- AUR/Multilib packages to install:
+	Games:
+		steam
+		protonup-qt
+	ML:
+		amdgpu_top
+		python-huggingface-hub
+		python-pyspark
+		python-tensorstore
+		python-torchfunc
+		python-torchaudio(-rocm)
+		python-torchvision(-rocm)
+	Other:
+		subliminal
