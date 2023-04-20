@@ -1,0 +1,222 @@
+:root {
+  /* Font family variables */
+  --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Gruvbox colors */
+  --black: light-dark(#fbf1c7, #282828);
+  --red: light-dark(#cc241d, #cc241d);
+  --green: light-dark(#98971a, #98971a);
+  --yellow: light-dark(#d79921, #d79921);
+  --blue: light-dark(#458588, #458588);
+  --magenta: light-dark(#b16286, #b16286);
+  --cyan: light-dark(#689d6a, #689d6a);
+  --white: light-dark(#7c6f64, #a89984);
+  --brblack: light-dark(#928374, #928374);
+  --brred: light-dark(#9d0006, #fb4934);
+  --brgreen: light-dark(#79740e, #b8bb26);
+  --bryellow: light-dark(#b57614, #fabd2f);
+  --brblue: light-dark(#076678, #83a598);
+  --brmagenta: light-dark(#8f3f71, #d3869b);
+  --brcyan: light-dark(#427b58, #8ec07c);
+  --brwhite: light-dark(#3c3836, #ebdbb2);
+
+  --fg: light-dark(#3c3836, #ebdbb2);
+  --bg: light-dark(#fbf1c7, #282828);
+  --brfg: light-dark(#928374, #928374);
+  --brbg: light-dark(#ebdbb2, #504945);
+
+  --link: light-dark(#458588, #d79921);
+  --brlink: light-dark(#076678, #fabd2f);
+
+  color-scheme: light dark;
+}
+
+* {
+  font-family: var(--main-font);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background-color: var(--brbg);
+}
+
+body {
+  font-size: 1em;
+  color: var(--fg);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 50em;
+}
+
+main {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  background-color: var(--bg);
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 0.2em 1em;
+}
+
+div.table {
+  overflow-x: auto;
+}
+
+table {
+  min-width: 100%;
+  /* optional: ensures header rows line up */
+  /* width: 100%; */
+  border-collapse: collapse;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: var(--brlink);
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+img,
+video {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+div.link {
+  display: block;
+  cursor: pointer;
+  border: none;
+  padding: 0.2em 0.4em;
+  margin: 1em 0.2em;
+  border-radius: 8px;
+}
+
+div.link:hover {
+  background-color: var(--brbg);
+}
+
+.plot-container {
+  align-items: center;
+  max-width: 700px;
+  width: 85%;
+  gap: 1em;
+  margin: 2em auto;
+  display: flex;
+}
+
+.plot-container img {
+  flex: 1;
+  height: auto;
+  object-fit: contain;
+}
+
+.social-links {
+  margin: 1em 0;
+}
+
+.link a,
+.social-links a {
+  margin: 0 0.5em;
+}
+
+.title {
+  width: auto;
+  cursor: pointer;
+  margin: 0.3em 0.5em;
+  padding: 0.3em 0.5em;
+  border-radius: 8px;
+}
+
+.title.show,
+.title:hover {
+  background-color: var(--brbg);
+  color: var(--fg);
+}
+
+.question,
+.answer {
+  display: none;
+  cursor: pointer;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 8px;
+  border-left: 3px solid var(--brblue);
+}
+
+.question.show,
+.answer.show {
+  display: block;
+}
+
+.answer {
+  border-left: 3px solid var(--brred);
+  font-style: italic;
+}
+
+.navbar {
+  background-color: var(--brbg);
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  flex: 0 0 auto;
+  display: block;
+  margin: 0.3em 0.5em;
+  padding: 0.3em 0.5em;
+  border-radius: 8px;
+  background-color: var(--brbg);
+  color: var(--fg);
+}
+
+.navbar a:hover {
+  background-color: var(--brblack);
+  color: var(--bg);
+}
+
+.navbar .active {
+  background-color: var(--link);
+  color: var(--bg);
+}

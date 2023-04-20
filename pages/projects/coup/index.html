@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira Coup</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+  <script src="/assets/js/nav.js"></script>
+
+  <main>
+    <h2><a href="https://github.com/ivomac/pettingzoo-coup.git">🗡️ PettingZoo Coup API</a></h2>
+    <p>
+      An implementation of the hidden information card game <a
+        href="https://en.wikipedia.org/wiki/Coup_(card_game)">Coup</a> as a <a
+        href="https://gymnasium.farama.org/">Gymnasium</a>/<a href="https://pettingzoo.farama.org/">PettingZoo</a>
+      environment.
+    </p>
+    <p>
+      In Coup, players want to attack and remove other players' cards and win by being the last player standing with
+      cards. Players may, and often should, lie about the hidden roles they are holding in their hand, but they risk
+      losing cards if they are caught. To play well, players should keep track of each other's actions throughout
+      the game and play the odds set by the cards.
+    </p>
+    <p>
+      Being a stochastic multi-agent game like Poker, the optimal strategy would be defined as a Nash equilibrium. Many
+      game situations are not trivial to solve, and may lead to stand-offs where no player wants to attack first.
+      Reinforcement learning methods like "Counterfactual Regret Minimization" can find a Nash equilibrium by training a
+      model through self-play.
+    </p>
+    <p>
+      Gymnasium is a reinforcement learning library that specifies a standard API for creating single-agent
+      environments, while PettingZoo is the Gymnasium extension for multi-agent environments. I implemented Coup as a
+      PettingZoo AEC environment with the goal of training an agent through self-play (WIP).
+    </p>
+    <p>
+      More information on the game and implementation is available on the <a
+        href="https://github.com/ivomac/pettingzoo-coup.git">Github</a> page.
+    </p>
+
+    <div class="plot-container">
+      <img src="/assets/images/projects/coup/game_states.png">
+    </div>
+
+  </main>
+
+</body>
+
+</html>

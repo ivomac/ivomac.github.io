@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira Toothpick</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+  <script src="/assets/js/nav.js"></script>
+
+  <main>
+    <h2><a href="https://github.com/ivomac/toothpick.nvim.git">🥢 toothpick.nvim</a></h2>
+    <p>
+      A plugin for neovim written in Lua that provides custom menus for user input, item selection, and notifications.
+    </p>
+    <p>
+      I was motivated to create the plugin to solve a common problem on Neovim when working in large projects: <b>File
+        switching</b>. Fuzzy finders like fzf or telescope.nvim are good general tools, but if we want to quickly switch
+      between a small set of files, we have to remember and constantly write parts of the file's names, which increases
+      cognitive load while programming.
+    </p>
+    <p>
+      This issue led to the creation of many popular plugins like harpoon and arrow.nvim that keep a list of tagged
+      buffers. The basic idea is to allow the user to tag files, with easy bindings to switch between them. My problem
+      with these plugins was the need to remember to tag files and maintain the list.
+    </p>
+    <p>
+      I decided to track time metrics like "last access time" and "total focus time" for each open file. I then sort the
+      files and format their info in a nice tabular form. From the file list I can quickly to jump to any file in it by
+      pressing the "hint" letter of each line.
+    </p>
+    <p>
+      With what I learned from this project, it was easy to create the other menus for user input and notifications
+      which are much better than Neovim's defaults.
+    </p>
+    <p>
+      More information on the plugin is available on the <a
+        href="https://github.com/ivomac/toothpick.nvim.git">Github</a> page.
+    </p>
+
+    <div class="plot-container">
+      <img src="/assets/images/projects/toothpick/select.png">
+      <img src="/assets/images/projects/toothpick/input.png">
+    </div>
+
+  </main>
+
+</body>
+
+</html>

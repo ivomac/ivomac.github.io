@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://ivomac.github.io/</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/pages/publications/index.html</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/pages/projects/index.html</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/assets/images/papers/2024/maceira2024.pdf</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/assets/images/papers/2022/maceira2022.pdf</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/assets/images/papers/2020/maceira2020.pdf</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/assets/images/papers/2018/maceira2018.pdf</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ivomac.github.io/assets/images/papers/2016/gouveia2016.pdf</loc>
+  <lastmod>2025-08-18T15:50:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>

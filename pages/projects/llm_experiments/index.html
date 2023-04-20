@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira LLM Experiments</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+  <script src="/assets/js/nav.js"></script>
+
+  <main>
+    <h2><a href="https://docs.google.com/document/d/1LbG9zG2ppu3uZNk0rkMUZ__FLBk6dpoqeuEPJC23mAo">📊 LLM Experiments</a>
+    </h2>
+
+    <p>
+      LLMs often hallucinate or show overconfidence when giving information. This is a huge block in their reliability
+      and potential usage as independent thinking agents.
+    </p>
+    <p>
+      In this project I studied the effect of instructing LLMs to not answer a question if they don't
+      know the answer, and then ask it questions on obscure facts. I analyse the effects of the prompt on accuracy,
+      changes in the fraction of "correct", "incorrect", and "don't know" answers.
+    </p>
+    <p>
+      The results show that most models are more likely to say "I don't know" when they had previously
+      answered incorrectly, resulting in higher accuracy. Some model dependence is observed that seems dependent on
+      whether the model "reasons", with reasoning models saying "I don't know" less often.
+    </p>
+    <p>
+      The mini-paper can be found in <a
+        href="https://docs.google.com/document/d/1LbG9zG2ppu3uZNk0rkMUZ__FLBk6dpoqeuEPJC23mAo">this Google doc</a>,
+      while the source code is on <a href="https://github.com/ivomac/llm_overconfidence">Github</a>.
+    </p>
+    <div class="plot-container">
+      <img src="/assets/images/projects/llm_experiments/analysis.png">
+    </div>
+  </main>
+
+</body>
+
+</html>
