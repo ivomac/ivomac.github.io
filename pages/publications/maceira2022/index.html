@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira Publications</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="/index.html">Intro</a>
+    <a href="/pages/publications/index.html" class="active">Publications</a>
+    <a href="/pages/projects/index.html">Projects</a>
+    <a href="/pages/fun/index.html">Fun</a>
+  </nav>
+
+  <nav class="navbar">
+    <a href="/pages/publications/maceira2024/index.html">maceira2024</a>
+    <a href="/pages/publications/maceira2022/index.html" class="active">maceira2022</a>
+    <a href="/pages/publications/maceira2020/index.html">maceira2020</a>
+    <a href="/pages/publications/maceira2018/index.html">maceira2018</a>
+    <a href="/pages/publications/gouveia2016/index.html">gouveia2016</a>
+  </nav>
+
+  <main>
+
+    <header>
+      <p class="link">
+        2022, <b>I. A. Maceira</b>, N. Chepiga, and F. Mila,
+        <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.043102" target="_blank">Phys.
+          Rev. Research</a>
+        <a href="/assets/images/papers/2022/maceira2022.pdf" target="_blank">PDF</a>
+      </p>
+      <h3>Conformal and chiral phase transitions in Rydberg chains</h3>
+    </header>
+
+    <p>We studied a fascinating quantum phenomenon where matter can suddenly switch between different organizational
+      patterns - like how water instantly becomes ice at freezing point, but much more exotic. Our work focuses on
+      chains of special atoms (called <b>Rydberg atoms</b>) that can be arranged and controlled with lasers in
+      laboratory experiments.</p>
+
+    <h4>The Problem We're Solving</h4>
+    <p>Recent experiments created chains of 51 atoms and watched them undergo <b>phase transitions</b> - sudden changes
+      in how the atoms organize themselves. Think of it like a crowd of people who suddenly switch from random milling
+      around to forming neat, repeating patterns. The experimenters measured something called the <b>Kibble-Zurek
+        exponent</b>, which tells us how fast these patterns form when we gradually change the system's conditions.</p>
+
+    <p>The experimental results were:</p>
+    <ul>
+      <li>For 3-atom repeating patterns: exponent ≈ 0.38</li>
+      <li>For 4-atom repeating patterns: exponent ≈ 0.25</li>
+    </ul>
+
+    <p>Computer simulations gave similar but not identical results, leaving scientists unsure about the <i>exact</i>
+      nature of these transitions.</p>
+
+    <h4>Our Approach: Ultra-High Precision Calculations</h4>
+    <p>We used a powerful computational method called <b>Density Matrix Renormalization Group (DMRG)</b> to calculate
+      these exponents with unprecedented accuracy. This technique allows us to simulate quantum systems much more
+      precisely than previous methods, essentially giving us "numerically exact" results.</p>
+
+    <p>The key insight was to find special points in the system where we could eliminate complicating factors (called
+      <b>chiral perturbations</b>) and study the pure, fundamental transition. It's like finding the perfect laboratory
+      conditions where you can measure a phenomenon without interference.
+    </p>
+
+    <h4>What We Discovered</h4>
+    <p>Our precise calculations revealed the "true" theoretical values for these exponents:</p>
+    <ul>
+      <li>For 3-atom patterns: <b>0.4545</b> (significantly higher than the experimental 0.38)</li>
+      <li>For 4-atom patterns: <b>0.444</b> (much higher than the experimental 0.25)</li>
+    </ul>
+
+    <p>We also identified exactly <i>what type</i> of phase transition occurs in each case:</p>
+    <ul>
+      <li>3-atom case: belongs to the <b>3-state Potts model</b> universality class</li>
+      <li>4-atom case: belongs to the <b>Ashkin-Teller model</b> universality class</li>
+    </ul>
+
+    <h4>Why This Matters</h4>
+    <p>Our work provides crucial <b>benchmark values</b> that experimenters can use to calibrate their measurements and
+      understand what they're observing. The significant differences between our theoretical predictions and current
+      experimental results suggest either:</p>
+    <ul>
+      <li>The experimental systems (with only 51 atoms) are too small to show the true infinite-system behavior</li>
+      <li>There are additional physical effects in the real experiments that need to be accounted for</li>
+      <li>The experimental conditions don't perfectly match the idealized theoretical model</li>
+    </ul>
+
+    <h4>The Broader Impact</h4>
+    <p>Beyond providing precise numbers, we mapped out the different types of behavior these systems can exhibit. We
+      found evidence for multiple types of transitions - some where patterns form gradually (<i>chiral transitions</i>)
+      and others involving intermediate "floating" phases where the pattern wavelength continuously changes.</p>
+
+    <p>This work bridges the gap between elegant theoretical physics and cutting-edge quantum experiments, providing the
+      mathematical foundation needed to fully understand and eventually harness these quantum phase transitions for
+      future technologies.</p>
+
+    <div class="plot-container">
+      <img src="/assets/images/papers/2022/plot.svg">
+    </div>
+
+
+  </main>
+</body>
+
+</html>
