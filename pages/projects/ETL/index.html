@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira ETL</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+  <script src="/assets/js/nav.js"></script>
+
+  <main>
+    <h2><a href="https://github.com/ivomac/rcell-convert">🔧 ETL pipeline</a></h2>
+    <p>
+      As my main project at the LNMC group of the Blue Brain Project, I worked in developing an ETL pipeline for
+      electrophysiological time series data. It monitors incoming raw data from several robots which conduct automated
+      patch-clamp experiments on single cells to determine the effects of drugs on ion channels.
+    </p>
+    <p>
+      The pipeline uses Dagster and is deployed through Docker on an internal server. The raw measurements and
+      metadata of
+      each experiment are validated and converted to an internal HDF5 specification. Once converted and stored on the
+      server, the new data is analysed together with the previous experiments by the scientist on Python notebooks
+      through a statistical analysis pipeline.
+    </p>
+    <p>
+      I made available a part of the code responsible for general validation and conversion of data and specific
+      conversion scripts for one of the robots: <a href="https://github.com/ivomac/rcell-convert">Github</a>.
+    </p>
+    <p>
+      For more information on the project, see <a href="https://channelpedia.epfl.ch/drug_mapping">Channelpedia</a>,
+      where the drug screening results are made available, among others.
+    </p>
+
+    <div class="plot-container">
+      <img src="/assets/images/projects/ETL/Robot.jpg">
+      <img src="/assets/images/projects/ETL/Activation.png">
+    </div>
+
+  </main>
+
+</body>
+
+</html>
