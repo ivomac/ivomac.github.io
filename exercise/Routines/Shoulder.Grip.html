@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+		<script id='script' src="/scripts/hide.js"></script>
+	</head>
+	<body>
+
+		<ul>
+			<h1 id="home"><a href="/index.html">Shoulder & Grip</a></h1>
+			<a class="odd"  onclick="togglediv('face-pull')">Face pull(+raise)</a>
+			<a class="even" onclick="togglediv('wrist-curl')">Wrist curl(+reverse)</a>
+			<a class="odd"  onclick="togglediv('front-raise-pull-apart')">Front raise pull-apart</a>
+			<a class="even" onclick="togglediv('farmer-carry')">Farmer carry(+shrug)</a>
+			<a class="odd"  onclick="togglediv('cross-body-long-arc-lateral-raise')">Lateral raise</a>
+			<a class="even" onclick="togglediv('pinch-hold')">Pinch hold</a>
+		</ul>
+
+		<div id="face-pull" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2022/02/face-pull.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="wrist-curl" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/wrist_curl.webm" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="front-raise-pull-apart" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2021/07/front-raise-pull-aparts.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="farmer-carry" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/dumbbell_shrug.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="cross-body-long-arc-lateral-raise" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2021/07/cross-body-lateral-raise.mp4" type="video/mp4">
+			</video>
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2021/07/long-arc-lateral-raise.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="pinch-hold" style="display:none;">
+			<img src="/media/pinch_hold.jpg">
+		</div>
+
+	</body>
+</html>
+
