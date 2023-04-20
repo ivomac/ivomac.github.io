@@ -1,0 +1,298 @@
+
+/* Default light theme */
+:root {
+    /* Font family variables */
+    --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    /* Gruvbox Light colors */
+    --black:     #fbf1c7;
+    --red:       #cc241d;
+    --green:     #98971a;
+    --yellow:    #d79921;
+    --blue:      #458588;
+    --magenta:   #b16286;
+    --cyan:      #689d6a;
+    --white:     #7c6f64;
+    --brblack:   #928374;
+    --brred:     #9d0006;
+    --brgreen:   #79740e;
+    --bryellow:  #b57614;
+    --brblue:    #076678;
+    --brmagenta: #8f3f71;
+    --brcyan:    #427b58;
+    --brwhite:   #3c3836;
+
+    --fg:        #3c3836;
+    --bg:        #fbf1c7;
+    --brfg:      #928374;
+    --brbg:      #ebdbb2;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Gruvbox Dark colors */
+        --black:     #282828;
+        --red:       #cc241d;
+        --green:     #98971a;
+        --yellow:    #d79921;
+        --blue:      #458588;
+        --magenta:   #b16286;
+        --cyan:      #689d6a;
+        --white:     #a89984;
+        --brblack:   #928374;
+        --brred:     #fb4934;
+        --brgreen:   #b8bb26;
+        --bryellow:  #fabd2f;
+        --brblue:    #83a598;
+        --brmagenta: #d3869b;
+        --brcyan:    #8ec07c;
+        --brwhite:   #ebdbb2;
+
+        --fg:        #ebdbb2;
+        --bg:        #282828;
+        --brfg:      #928374;
+        --brbg:      #504945;
+    }
+}
+
+body {
+    color: var(--fg);
+    background-color: var(--bg);
+    font: 16px/1.6 var(--main-font);
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 46em;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+a:link {
+	color: var(--brcyan);
+}
+
+a:visited {
+	color: var(--brcyan);
+}
+
+a:active {
+	color: var(--brcyan);
+}
+
+a:hover {
+	color: var(--brblue);
+}
+
+.site-title {
+    color: var(--bryellow);
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+h1 {
+    color: var(--bryellow);
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--brred);
+    font-style: italic;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h3,h4,h5,h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+/* Profile and general image styles */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 2em auto;
+    object-fit: cover;
+}
+
+img,video {
+    width: 90%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Publications styles */
+.publication {
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    background: var(--black);
+}
+
+.publication img {
+    max-width: 500px;
+    margin: 1em 0;
+}
+
+.publication .authors {
+    color: var(--brblue);
+    font-style: italic;
+}
+
+.publication .links {
+    margin-top: 1em;
+}
+
+.publication .links a {
+    margin-right: 1em;
+}
+
+/* Projects styles */
+.project {
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    background: var(--black);
+}
+
+.project img {
+    max-width: 400px;
+    margin: 1em 0;
+}
+
+.project .tags {
+    margin: 1em 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    margin: 0.2em;
+    border-radius: 1em;
+    background: var(--brbg);
+    color: var(--fg);
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    border-radius: 0.3em;
+    background: var(--brcyan);
+    color: var(--black);
+}
+
+/* Social links */
+.social-links {
+    margin: 1em 0;
+}
+
+.social-links a {
+    margin-right: 1em;
+}
+
+/* Sections */
+section {
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    background: var(--black);
+}
+
+code {
+    white-space:pre-line;
+}
+
+pre {
+    white-space:normal;
+}
+
+.question {
+    display: none;
+    margin: 1em 0;
+    padding: 1em;
+    background: var(--black);
+    border-radius: 0.3em;
+    border-left: 3px solid var(--brblue);
+    font-family: var(--main-font);
+    font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.question.show {
+    display: block;
+}
+
+.answer {
+    display: none;
+    margin: 1em 0;
+    padding: 1em;
+    background: var(--black);
+    border-radius: 0.3em;
+    border-left: 3px solid var(--brred);
+    font-family: var(--main-font);
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--brred);
+}
+
+.answer.show {
+    display: block;
+}
+
+/* Games navigation styles */
+.games-nav {
+    margin: 1em 0;
+}
+
+.games-nav ul {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.game-link {
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    background: var(--brbg);
+    color: var(--fg);
+}
+
+.game-link:hover {
+    background: var(--brblack);
+    color: var(--bg);
+}
+
+.game-link.active {
+    background: var(--bryellow);
+    color: var(--black);
+}
+
+.odd {
+	color: var(--bryellow);
+}
+
+.even {
+	color: var(--brblue);
+}
+
