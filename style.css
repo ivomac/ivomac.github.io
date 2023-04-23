@@ -61,10 +61,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1{
-	border-top: 1px solid var(--bryellow);
-	border-bottom: 1px solid var(--bryellow);
 	color: var(--bryellow);
-	margin: 2% 0 0 0;
+	margin: 2.5% 0 0 0;
 	text-transform: uppercase;
 	font-size: 1.5em;
 }
