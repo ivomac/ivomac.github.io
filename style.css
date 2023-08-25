@@ -39,6 +39,7 @@ body{
 	background-color: var(--bg);
 }
 
+object
 a:link {
   color: var(--brblue);
 }
@@ -80,6 +81,25 @@ h3,h4,h5,h6{
 img,video{
 	width: 90%;
 	margin: 0 auto 0 auto;
+	display: block;
+}
+
+.question {
+	display: none;
+	font-style: italic;
+}
+
+.question.show {
+	display: block;
+}
+
+.answer {
+	display: none;
+	color: var(--red);
+	font-style: bold;
+}
+
+.answer.show {
 	display: block;
 }
 
