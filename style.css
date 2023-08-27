@@ -1,7 +1,6 @@
 
 /* Gruvbox */
 :root {
-
 	--black:     #282828 !important;
 	--red:       #cc241d !important;
 	--green:     #98971a !important;
@@ -24,69 +23,70 @@
 
 	--brfg:      #928374 !important;
 	--brbg:      #504945 !important;
-
 }
 
-body{
+body {
 	width: 100%;
-	max-width: 1280px;
+	margin: 1% 1% 1% 1%;
 	text-align: center;
 	font-family: monospace;
 	font-size: 28pt;
 	color: var(--fg);
-	margin: 2% auto 2% auto;
 	float: none;
 	background-color: var(--bg);
 }
 
-object
 a:link {
-  color: var(--brblue);
+	color: var(--brcyan);
 }
 
 a:visited {
-  color: var(--blue);
-}
-
-a:hover {
-  color: var(--brcyan);
+	color: var(--brcyan);
 }
 
 a:active {
-  color: var(--brcyan);
+	color: var(--brcyan);
 }
 
-h1,h2,h3,h4,h5,h6{
+a:hover {
+	color: var(--brblue);
+}
+
+h1,h2,h3,h4,h5,h6 {
 	text-align: center;
 	font-weight: normal;
 }
 
-h1{
+h1 {
 	color: var(--bryellow);
-	margin: 2.5% 0 0 0;
+	margin: 2% auto 1% auto;
 	text-transform: uppercase;
-	font-size: 1.5em;
-}
-
-h2{
-	color: var(--brblue);
-	font-style: italic;
 	font-size: 1.2em;
 }
 
-h3,h4,h5,h6{
+h2 {
+	color: var(--brmagenta);
+	font-style: italic;
 	font-size: 1em;
 }
 
-img,video{
+h3,h4,h5,h6 {
+	font-size: 1em;
+}
+
+img,video {
 	width: 90%;
-	margin: 0 auto 0 auto;
 	display: block;
 }
 
 .question {
 	display: none;
+	margin: 1% 1% 1% 1%;
+	border: 1px solid var(--fg);
+	padding: 1% 1% 1% 1%;
+	text-align: justify;
 	font-style: italic;
+	font-size: 0.8em;
 }
 
 .question.show {
@@ -95,8 +95,12 @@ img,video{
 
 .answer {
 	display: none;
-	color: var(--red);
-	font-style: bold;
+	margin: 1% 1% 1% 1%;
+	border: 1px solid var(--brred);
+	padding: 1% 1% 1% 1%;
+	text-align: justify;
+	font-size: 0.8em;
+	color: var(--brred);
 }
 
 .answer.show {

@@ -34,6 +34,7 @@ async function displayPuzzles() {
 
 		TitleElement.addEventListener('click', () => {
 			QuestionElement.classList.toggle('show');
+			AnswerElement.classList.remove('show');
 		});
 
 		QuestionElement.addEventListener('click', () => {
