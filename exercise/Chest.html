@@ -4,38 +4,52 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/style.css" type="text/css">
 	</head>
+	<script id='script' src="/scripts/hide.js"></script>
 	<body>
-		<h1 id="home"><a href="/index.html">Chest (ranked)</a></h1>
+		<h1 id="home"><a href="/index.html">Chest</a></h1>
 
-		<h3 id="1-lateral-crossover">1. Lateral crossover</h3>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2023/02/3d-cable-crossover.mp4" type="video/mp4">
-		</video>
+		<h3 onclick="togglediv('lateral-crossover')">Lateral crossover</h3>
+		<div id="lateral-crossover" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2023/02/3d-cable-crossover.mp4" type="video/mp4">
+			</video>
+		</div>
 
-		<h4 id="variant-high-to-low-crossover">(Variant) High to low crossover</h4>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2022/02/hi-to-low-crossover.mp4" type="video/mp4">
-		</video>
+		<h4 onclick="togglediv('high-to-low-crossover')">High-to-low-crossover</h4>
+		<div id="high-to-low-crossover" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2022/02/hi-to-low-crossover.mp4" type="video/mp4">
+			</video>
+		</div>
 
-		<h4 id="variant-upper-crossover">(Variant) Upper crossover</h4>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2021/05/upper-cable-crossover.mp4" type="video/mp4">
-		</video>
+		<h4 onclick="togglediv('upper-crossover')">Upper crossover</h4>
+		<div id="upper-crossover" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2021/05/upper-cable-crossover.mp4" type="video/mp4">
+			</video>
+		</div>
 
-		<h3 id="2-dips">2. Dips</h3>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2023/02/pec-dips.mp4" type="video/mp4">
-		</video>
+		<h3 onclick="togglediv('dips')">Dips</h3>
+		<div id="dips" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2023/02/pec-dips.mp4" type="video/mp4">
+			</video>
+		</div>
 
-		<h3 id="3-twisting-pushup">3. Twisting pushup</h3>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2020/02/twisting-pushup.mp4" type="video/mp4">
-		</video>
+		<h3 onclick="togglediv('pushup')">Pushup</h3>
+		<div id="pushup" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2022/02/pushup-plus-1.mp4" type="video/mp4">
+			</video>
+		</div>
 
-		<h4 id="regular-pushup">(Regular) pushup</h4>
-		<video controls>
-			<source src="https://athleanx.com/wp-content/uploads/2022/02/pushup-plus-1.mp4" type="video/mp4">
-		</video>
+		<h4 onclick="togglediv('twisting-pushup')">Twisting pushup</h4>
+		<div id="twisting-pushup" style="display:none;">
+			<video controls>
+				<source src="https://athleanx.com/wp-content/uploads/2020/02/twisting-pushup.mp4" type="video/mp4">
+			</video>
+		</div>
+
 	</body>
 </html>
 
