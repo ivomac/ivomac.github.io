@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+	</head>
+	<script id='script' src="/scripts/hide.js"></script>
+	<body>
+		<h1 id="home"><a href="/index.html">Legs</a></h1>
+
+		<h2 id="Warmup">Warmup</h2>
+
+		<ul>
+			<li>[N] Neck Rotation</li>
+			<li>[N] Shoulder Rotation</li>
+			<li>[N] Back Stretch side-to-side</li>
+			<li>[N] Front/back/side leg swings</li>
+			<li>[N] Jumping jacks</li>
+			<li>[N] Wall drive</li>
+			<li>[N] Shoe grab</li>
+			<li>[N] Glute bridges</li>
+			<li>[N] Hip hinge</li>
+		</ul>
+
+		<h2 id="Cycle">Cycle</h2>
+
+		<h3 onclick="togglediv('swing')">[K] Swings</h3>
+		<div id="swing" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/exercise/media/kettlebell_swing.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h3 onclick="togglediv('reverse-lunge')">[D] Reverse lunge</h3>
+		<div id="reverse-lunge" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/exercise/media/rear_lunge.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h3 onclick="togglediv('straight-raises')">[N] Calf raise / Inverse calf raise</h3>
+		<div id="straight-raises" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2017/04/1.5-calf-raises-straight.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h3 onclick="togglediv('barbell-hip-thrust')">[b] hip thrust</h3>
+		<div id="barbell-hip-thrust" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2022/04/barbell-hip-thrust.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h3 onclick="togglediv('db-bulgarian-split-squat')">[D] bulgarian split squat</h3>
+		<div id="db-bulgarian-split-squat" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/exercise/media/bulgarian_split_squat.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h3 onclick="togglediv('launchers')">[N] Inverse leg curl / Launchers</h3>
+		<div id="launchers" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/exercise/media/inverse_leg_curl.mp4" type="video/mp4">
+			</video>
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2017/04/1-minute-calf-launchers.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h2 id="Cooldown">Cooldown</h2>
+
+		<ul>
+			<li>[N] Knee hip thrust and rotate</li>
+			<li>[N] Leg stretches</li>
+			<li>[N] Floor can opener</li>
+		</ul>
+
+	</body>
+</html>
