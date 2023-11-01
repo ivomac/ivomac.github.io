@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+		<script id='script' src="/scripts/hide.js"></script>
+	</head>
+	<body>
+
+		<ul>
+			<h1 id="home"><a href="/index.html">Push</a></h1>
+			<a class="odd"  onclick="togglediv('pushup')">Pushup</a>
+			<a class="even" onclick="togglediv('overhead-extension')">Overhead extension</a>
+			<a class="odd"  onclick="togglediv('prowler-pushup')">Prowler pushup</a>
+			<a class="even" onclick="togglediv('suspended-chest-fly')">Suspended chest fly</a>
+			<a class="odd"  onclick="togglediv('incline-pushup')">Incline pushup</a>
+			<a class="even" onclick="togglediv('overhead-press')">Overhead press</a>
+		</ul>
+
+		<div id="pushup" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2020/02/standard-pushup.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="overhead-extension" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2022/02/overhead-triceps-extension.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="prowler-pushup" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2020/02/prowler-pushup.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="suspended-chest-fly" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/suspended_chest_fly.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="incline-pushup" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2020/02/incline-pushups.mp4" type="video/mp4">
+			</video>
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2020/02/psuedo-planche.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="overhead-press" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2022/02/overhead-barbell-press.mp4" type="video/mp4">
+			</video>
+		</div>
+
+	</body>
+</html>
+

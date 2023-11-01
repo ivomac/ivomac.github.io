@@ -1,6 +1,12 @@
 
 function togglediv(id) {
-    var div = document.getElementById(id);
-    div.style.display = div.style.display == "none" ? "block" : "none";
+	var inp = document.getElementsByTagName('div');
+	var divs = Array.prototype.slice.call(inp);
+
+	divs.forEach(div => {
+		div.style.display = 'none';
+	});
+	var el = document.getElementById(id);
+	el.style.display = 'block';
 }
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+		<script id='script' src="/scripts/hide.js"></script>
+	</head>
+	<body>
+
+		<ul>
+			<h1 id="home"><a href="/index.html">Legs</a></h1>
+			<a class="odd"  onclick="togglediv('swing')">Swings</a>
+			<a class="even" onclick="togglediv('reverse-lunge')">Reverse lunge</a>
+			<a class="odd"  onclick="togglediv('straight-raises')">Calf raise/Inverse</a>
+			<a class="even" onclick="togglediv('barbell-hip-thrust')">Hip thrust</a>
+			<a class="odd"  onclick="togglediv('db-bulgarian-split-squat')">Bulgarian split squat</a>
+			<a class="even" onclick="togglediv('launchers')">Inverse leg curl/Launchers</a>
+		</ul>
+
+		<div id="swing" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/kettlebell_swing.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="reverse-lunge" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/rear_lunge.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="straight-raises" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2017/04/1.5-calf-raises-straight.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="barbell-hip-thrust" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2022/04/barbell-hip-thrust.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="db-bulgarian-split-squat" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/bulgarian_split_squat.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div id="launchers" style="display:none;">
+			<video loop muted controls autoplay>
+				<source src="/media/inverse_leg_curl.mp4" type="video/mp4">
+			</video>
+			<video loop muted controls autoplay>
+				<source src="https://athleanx.com/wp-content/uploads/2017/04/1-minute-calf-launchers.mp4" type="video/mp4">
+			</video>
+		</div>
+
+	</body>
+</html>

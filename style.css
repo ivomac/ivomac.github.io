@@ -25,12 +25,17 @@
 	--brbg:      #504945 !important;
 }
 
+html {
+    display: table;
+    margin: auto;
+}
+
 body {
-	width: 100%;
+	width: 99%;
 	margin: 0;
 	text-align: center;
 	font-family: monospace;
-	font-size: 28pt;
+	font-size: 26pt;
 	color: var(--fg);
 	float: none;
 	background-color: var(--bg);
@@ -38,6 +43,11 @@ body {
 
 ul {
   list-style-type: none;
+}
+
+a {
+	text-decoration: underline;
+	white-space: nowrap;
 }
 
 a:link {
@@ -80,6 +90,7 @@ h3,h4,h5,h6 {
 
 img,video {
 	width: 90%;
+	max-width: 750px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -111,5 +122,18 @@ img,video {
 
 .answer.show {
 	display: block;
+}
+
+.video-js .vjs-control-bar{
+	display: none;
+}
+
+
+.odd {
+	color: var(--bryellow);
+}
+
+.even {
+	color: var(--brblue);
 }
 
