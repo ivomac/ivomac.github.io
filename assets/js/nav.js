@@ -14,8 +14,9 @@ const SITE_STRUCTURE = {
     'publications/gouveia2016': { name: 'Gouveia2016', path: '/pages/publications/gouveia2016/index.html' },
 
     // Projects
-    'projects/ETL': { name: '🔧 ETL pipeline', path: '/pages/projects/ETL/index.html' },
+    'projects/ETL': { name: '🔧 ETL Pipeline', path: '/pages/projects/ETL/index.html' },
     'projects/git_guide': { name: '🪣 Git Guide', path: '/pages/projects/git_guide/index.html' },
+    'projects/blackjack': { name: '🃏 Blackjack Solver', path: '/pages/projects/blackjack/index.html' },
     'projects/TODO': { name: '🚧 TODO', path: '/pages/projects/index.html' },
 
     // Fun
