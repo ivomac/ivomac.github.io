@@ -17,6 +17,7 @@ const SITE_STRUCTURE = {
     'projects/ETL': { name: '🔧 ETL Pipeline', path: '/pages/projects/ETL/index.html' },
     'projects/git_guide': { name: '🪣 Git Guide', path: '/pages/projects/git_guide/index.html' },
     'projects/blackjack': { name: '🃏 Blackjack Solver', path: '/pages/projects/blackjack/index.html' },
+    'projects/cl_gen': { name: '✉️ Cover Letter Generator', path: '/pages/projects/cl_gen/index.html' },
     'projects/toothpick': { name: '⌨️ Neovim Plugin', path: '/pages/projects/toothpick/index.html' },
     'projects/TODO': { name: '🚧 TODO', path: '/pages/projects/index.html' },
 

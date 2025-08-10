@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivo Maceira CL Generator</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+  <script src="/assets/js/nav.js"></script>
+
+  <main>
+    <h2><a href="https://github.com/ivomac/cl-gen">✉️ Cover Letter Generator</a></h2>
+    <p>
+      During my time searching for jobs I found myself spending too much time writing tailored cover letters, when
+      in fact the final cover letter contained much of the same content as my past letters.
+    </p>
+    <p>
+      To speed up the process, I wrote a small LLM RAG pipeline to:
+    <ul>
+      <li>1. Go through my past cover letters, and retrieve the sentences in their body text with a small LLM.</li>
+      <li>2. Cluster the sentences into labelled clusters with HDBSCAN and an open-source embedding model.</li>
+      <li>3. Sort the clusters given their similarity to a job posting using the same embedding.</li>
+      <li>4. Generate a cover letter using a medium-sized LLM given the sorted clusters and job posting.</li>
+    </ul>
+    </p>
+    <p>
+      It's available on <a href="https://github.com/ivomac/cl-gen">Github</a>.
+    </p>
+  </main>
+
+</body>
+
+</html>
