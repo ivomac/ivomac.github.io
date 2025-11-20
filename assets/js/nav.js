@@ -5,6 +5,7 @@ const SITE_STRUCTURE = {
     'publications': { name: 'Publications', path: '/pages/publications/index.html' },
     'projects': { name: 'Projects', path: '/pages/projects/index.html' },
     'fun': { name: 'Fun', path: '/pages/fun/index.html' },
+    'todo-webapp': { name: 'Todo Webapp', path: '/pages/projects/todo-webapp/index.html' },
 
     // Publications
     'publications/maceira2024': { name: 'Maceira2024', path: '/pages/publications/maceira2024/index.html' },
