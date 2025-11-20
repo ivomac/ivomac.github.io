@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src https://api.github.com;">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--brbg);
+      padding: 0;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .card {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: var(--blue);
+      color: var(--bg);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: var(--brblue);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--brfg);
+    }
+
+    .btn-icon:hover {
+      color: var(--fg);
+    }
+
+    .input-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--brfg);
+      border-radius: 4px;
+      font-size: 14px;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--brbg);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .todo-item:hover {
+      background: var(--brblack);
+    }
+
+    .todo-text {
+      flex: 1;
+      color: var(--fg);
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: var(--red);
+      cursor: pointer;
+      opacity: 0;
+      padding: 4px;
+    }
+
+    .todo-item:hover .delete-btn {
+      opacity: 1;
+    }
+
+    .delete-btn:hover {
+      color: var(--brred);
+    }
+
+    .error {
+      background: var(--brbg);
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .status {
+      font-size: 14px;
+      color: var(--brfg);
+      margin-bottom: 16px;
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--brfg);
+      padding: 32px;
+    }
+
+    .settings-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .settings-modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 24px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .modal-content h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: var(--fg);
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      color: var(--brfg);
+      margin-bottom: 16px;
+    }
+
+    .clear-btn {
+      width: 100%;
+      text-align: center;
+      color: var(--brfg);
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .clear-btn:hover {
+      color: var(--fg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" onclick="loadTodos()" title="Refresh from GitHub">🔄</button>
+          <button class="btn" onclick="saveTodos()" title="Save to GitHub">💾</button>
+          <button class="btn" onclick="showSettings()" title="Go to Settings">⚙️</button>
+        </div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="status" class="status" style="display: none;"></div>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="newTodoInput" placeholder="Add new todo..." onkeypress="handleKeyPress(event)"
+          autocomplete="off">
+        <button class="btn" onclick="addTodo()">+</button>
+      </div>
+
+      <div id="todoList"></div>
+    </div>
+
+  </div>
+
+  <div id="settingsModal" class="settings-modal">
+    <div class="modal-content">
+      <h2>Todo List</h2>
+      <details style="margin-bottom: 16px; padding: 12px; background: var(--brbg); border-radius: 4px;">
+        <summary style="cursor: pointer; font-weight: bold; margin-bottom: 8px;">Description</summary>
+        <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+          <li>Simple todo list application that synchronizes through GitHub Gists.</li>
+          <li>Access and edit your todos from anywhere.</li>
+          <li>Each todo item is a line in a plain text file.</li>
+          <li><strong>Warning:</strong> Secrets are stored locally but are not encrypted.</li>
+        </ul>
+      </details>
+
+      <details style="margin-bottom: 16px; padding: 12px; background: var(--brbg); border-radius: 4px;">
+        <summary style="cursor: pointer; font-weight: bold; margin-bottom: 8px;">How to Setup</summary>
+        <ol style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+          <li>Create a (secret) GitHub gist</li>
+          <li>Note the gist ID from the URL and the filename (e.g., "todo")</li>
+          <li>Generate a GitHub Personal Access Token:
+            <ul style="margin-left: 20px; margin-top: 4px;">
+              <li>Go to <a href="https://github.com/settings/tokens" target="_blank"
+                  style="color: var(--link);">github.com/settings/tokens</a></li>
+              <li>Click "Generate new token"</li>
+              <li>Select ONLY the "Gists" scope</li>
+              <li>Save the generated token</li>
+            </ul>
+          </li>
+          <li>Enter all three values below and save</li>
+        </ol>
+      </details>
+
+      <details style="margin-bottom: 16px; padding: 12px; background: var(--brbg); border-radius: 4px;">
+        <summary style="cursor: pointer; font-weight: bold; margin-bottom: 8px;">How to Use</summary>
+        <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+          <li><strong>Add items:</strong> Type in the input field and press Enter or click +</li>
+          <li><strong>Delete items:</strong> Hover over an item and click the trash icon</li>
+          <li><strong>Copy items:</strong> Double-click an item to copy it to clipboard</li>
+          <li><strong>Save changes:</strong> Click the 💾 icon to save to GitHub</li>
+          <li><strong>Refresh:</strong> Click the 🔄 icon to reload from GitHub</li>
+        </ul>
+      </details>
+
+      <p>Filename:</p>
+      <input type="text" id="filenameInput" placeholder="todo" style="width: 100%; margin-bottom: 16px;">
+      <p>Gist ID:</p>
+      <input type="text" id="gistIdInput" placeholder="411c04eca1f5fa1a81c4e0053f02029a" autocomplete="username"
+        style="width: 100%; margin-bottom: 16px;">
+      <p>GitHub Personal Access Token:</p>
+      <input type="password" id="tokenInput" autocomplete="current-password" placeholder="github_..."
+        style="width: 100%; margin-bottom: 16px;">
+      <button class="btn" style="width: 100%; margin-bottom: 16px;" onclick="saveSettings()">Save Configuration</button>
+      <button class="btn" style="width: 100%;" onclick="clearToken()">Clear Token & Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let todos = [];
+    let token = '';
+    let gistId = '';
+    let filename = '';
+    let saving = false;
+
+    function init() {
+      token = localStorage.getItem('github_token');
+      gistId = localStorage.getItem('gist_id');
+      filename = localStorage.getItem('gist_filename') || 'todo';
+
+      if (token && gistId) {
+        loadTodos();
+      } else {
+        showSettings();
+      }
+    }
+
+    function showSettings() {
+      document.getElementById('gistIdInput').value = gistId || '';
+      document.getElementById('filenameInput').value = filename || 'todo';
+      document.getElementById('tokenInput').value = '';
+      document.getElementById('settingsModal').classList.add('active');
+    }
+
+    function hideSettings() {
+      document.getElementById('settingsModal').classList.remove('active');
+    }
+
+    function saveSettings() {
+      const gistIdInput = document.getElementById('gistIdInput');
+      const filenameInput = document.getElementById('filenameInput');
+      const tokenInput = document.getElementById('tokenInput');
+
+      const newGistId = gistIdInput.value.trim();
+      const newFilename = filenameInput.value.trim();
+      const newToken = tokenInput.value.trim();
+
+      if (!newGistId) {
+        showError('Gist ID cannot be empty');
+        return;
+      }
+      if (!newFilename) {
+        showError('Filename cannot be empty');
+        return;
+      }
+      if (!newToken) {
+        showError('Token cannot be empty');
+        return;
+      }
+
+      localStorage.setItem('gist_id', newGistId);
+      localStorage.setItem('gist_filename', newFilename);
+      localStorage.setItem('github_token', newToken);
+
+      gistId = newGistId;
+      filename = newFilename;
+      token = newToken;
+
+      hideSettings();
+      loadTodos();
+    }
+
+    function clearToken() {
+      localStorage.removeItem('github_token');
+      localStorage.removeItem('gist_id');
+      localStorage.removeItem('gist_filename');
+      token = '';
+      gistId = '';
+      filename = 'todo';
+      todos = [];
+      renderTodos();
+      showSettings();
+    }
+
+    async function loadTodos() {
+      try {
+        showStatus('Loading...');
+        hideError();
+
+        if (!gistId || !token) {
+          throw new Error('Configuration incomplete');
+        }
+
+        console.log('Fetching gist:', gistId);
+        const response = await fetch(`https://api.github.com/gists/${gistId}`, {
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          },
+          cache: 'no-store'
+        });
+
+        console.log('Response status:', response.status);
+
+        if (!response.ok) {
+          console.error('Error response status:', response.status);
+          throw new Error(`Failed to load gist: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Gist loaded successfully');
+        console.log('Files in gist:', Object.keys(data.files));
+
+        const content = data.files[filename]?.content || '';
+        console.log('Raw content:', content);
+        todos = content.split('\n').filter(line => line.trim() !== '');
+        console.log('Parsed todos:', todos);
+        renderTodos();
+        hideStatus();
+      } catch (err) {
+        console.error('Error:', err);
+        showError(err.message);
+        hideStatus();
+      }
+    }
+
+    async function saveTodos() {
+      if (saving) return;
+
+      try {
+        saving = true;
+        showStatus('Saving...');
+        hideError();
+
+        const content = todos.join('\n');
+        console.log('Saving todos:', todos);
+        console.log('Content to save:', content);
+
+        const payload = {
+          files: {
+            [filename]: {
+              content: content
+            }
+          }
+        };
+        console.log('Payload:', JSON.stringify(payload, null, 2));
+
+        const response = await fetch(`https://api.github.com/gists/${gistId}`, {
+          method: 'PATCH',
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        console.log('Save response status:', response.status);
+
+        if (!response.ok) {
+          console.error('Save error response status:', response.status);
+          throw new Error(`Failed to save: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        console.log('Save response data:', responseData);
+        console.log('Saved successfully');
+        showStatus('Saved!');
+        setTimeout(hideStatus, 2000);
+      } catch (err) {
+        console.error('Save error:', err);
+        showError(err.message);
+        hideStatus();
+      } finally {
+        saving = false;
+      }
+    }
+
+    function addTodo() {
+      const input = document.getElementById('newTodoInput');
+      const text = input.value.trim();
+
+      if (!text) return;
+
+      todos.unshift(text);
+      input.value = '';
+      renderTodos();
+    }
+
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      renderTodos();
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        addTodo();
+      }
+    }
+
+    function renderTodos() {
+      const list = document.getElementById('todoList');
+
+      list.innerHTML = '';
+      if (todos.length === 0) {
+        return;
+      }
+
+      list.innerHTML = todos.map((todo, index) => `
+                <div class="todo-item" ondblclick="copyToClipboard(${index})">
+                    <span class="todo-text">${escapeHtml(todo)}</span>
+                    <button class="delete-btn" onclick="event.stopPropagation(); deleteTodo(${index})">🗑️</button>
+                </div>
+            `).join('');
+    }
+
+    async function copyToClipboard(index) {
+      const todo = todos[index];
+      try {
+        await navigator.clipboard.writeText(todo);
+        showStatus('Copied to clipboard!');
+        setTimeout(hideStatus, 1500);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+        showError('Failed to copy to clipboard');
+      }
+    }
+
+    function showError(message) {
+      const errorDiv = document.getElementById('error');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+
+    function hideError() {
+      document.getElementById('error').style.display = 'none';
+    }
+
+    function showStatus(message) {
+      const statusDiv = document.getElementById('status');
+      statusDiv.textContent = message;
+      statusDiv.style.display = 'block';
+    }
+
+    function hideStatus() {
+      document.getElementById('status').style.display = 'none';
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.textContent;
+    }
+
+    init();
+  </script>
+</body>
+
+</html>

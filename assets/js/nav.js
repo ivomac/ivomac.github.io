@@ -110,7 +110,7 @@ function generateNavigation() {
         { key: 'intro', config: SITE_STRUCTURE.intro, parts: ['intro'] },
         { key: 'publications', config: SITE_STRUCTURE.publications, parts: ['publications'] },
         { key: 'projects', config: SITE_STRUCTURE.projects, parts: ['projects'] },
-        { key: 'fun', config: SITE_STRUCTURE.fun, parts: ['fun'] }
+        { key: 'fun', config: SITE_STRUCTURE.fun, parts: ['fun'] },
     ];
 
     const navBars = [];
