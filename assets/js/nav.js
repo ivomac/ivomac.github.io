@@ -15,6 +15,7 @@ const SITE_STRUCTURE = {
 
     // Projects
     'projects/ETL': { name: '🔧 ETL Pipeline', path: '/pages/projects/ETL/index.html' },
+    'projects/coup': { name: '🗡️ PettingZoo Coup', path: '/pages/projects/coup/index.html' },
     'projects/git_guide': { name: '🪣 Git Guide', path: '/pages/projects/git_guide/index.html' },
     'projects/llm_experiments': { name: '📊 LLM Experiments', path: '/pages/projects/llm_experiments/index.html' },
     'projects/toothpick': { name: '⌨️ Neovim Plugin', path: '/pages/projects/toothpick/index.html' },
