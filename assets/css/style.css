@@ -1,64 +1,34 @@
-/* Default light theme */
 :root {
   /* Font family variables */
   --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-  /* Gruvbox Light colors */
-  --black: #fbf1c7;
-  --red: #cc241d;
-  --green: #98971a;
-  --yellow: #d79921;
-  --blue: #458588;
-  --magenta: #b16286;
-  --cyan: #689d6a;
-  --white: #7c6f64;
-  --brblack: #928374;
-  --brred: #9d0006;
-  --brgreen: #79740e;
-  --bryellow: #b57614;
-  --brblue: #076678;
-  --brmagenta: #8f3f71;
-  --brcyan: #427b58;
-  --brwhite: #3c3836;
+  /* Gruvbox colors */
+  --black: light-dark(#fbf1c7, #282828);
+  --red: light-dark(#cc241d, #cc241d);
+  --green: light-dark(#98971a, #98971a);
+  --yellow: light-dark(#d79921, #d79921);
+  --blue: light-dark(#458588, #458588);
+  --magenta: light-dark(#b16286, #b16286);
+  --cyan: light-dark(#689d6a, #689d6a);
+  --white: light-dark(#7c6f64, #a89984);
+  --brblack: light-dark(#928374, #928374);
+  --brred: light-dark(#9d0006, #fb4934);
+  --brgreen: light-dark(#79740e, #b8bb26);
+  --bryellow: light-dark(#b57614, #fabd2f);
+  --brblue: light-dark(#076678, #83a598);
+  --brmagenta: light-dark(#8f3f71, #d3869b);
+  --brcyan: light-dark(#427b58, #8ec07c);
+  --brwhite: light-dark(#3c3836, #ebdbb2);
 
-  --fg: #3c3836;
-  --bg: #fbf1c7;
-  --brfg: #928374;
-  --brbg: #ebdbb2;
+  --fg: light-dark(#3c3836, #ebdbb2);
+  --bg: light-dark(#fbf1c7, #282828);
+  --brfg: light-dark(#928374, #928374);
+  --brbg: light-dark(#ebdbb2, #504945);
 
-  --link: var(--blue);
-  --brlink: var(--brblue);
-}
+  --link: light-dark(#458588, #d79921);
+  --brlink: light-dark(#076678, #fabd2f);
 
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Gruvbox Dark colors */
-    --black: #282828;
-    --red: #cc241d;
-    --green: #98971a;
-    --yellow: #d79921;
-    --blue: #458588;
-    --magenta: #b16286;
-    --cyan: #689d6a;
-    --white: #a89984;
-    --brblack: #928374;
-    --brred: #fb4934;
-    --brgreen: #b8bb26;
-    --bryellow: #fabd2f;
-    --brblue: #83a598;
-    --brmagenta: #d3869b;
-    --brcyan: #8ec07c;
-    --brwhite: #ebdbb2;
-
-    --fg: #ebdbb2;
-    --bg: #282828;
-    --brfg: #928374;
-    --brbg: #504945;
-
-    --link: var(--yellow);
-    --brlink: var(--bryellow);
-  }
+  color-scheme: light dark;
 }
 
 * {
@@ -147,7 +117,6 @@ h6 {
 
 img,
 video {
-  background-color: #ffffff;
   width: 85%;
   margin-left: auto;
   margin-right: auto;
