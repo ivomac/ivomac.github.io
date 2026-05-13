@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--brbg);
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0;
+}
+
+.card {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn {
+  background: var(--blue);
+  color: var(--bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: var(--brblue);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+input[type="text"],
+input[type="password"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--brfg);
+  border-radius: 4px;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--brbg);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-item:hover {
+  background: var(--brblack);
+}
+
+.todo-text {
+  flex: 1;
+  color: var(--fg);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.copy-btn {
+  color: var(--brfg);
+}
+
+.copy-btn:hover {
+  color: var(--fg);
+}
+
+.toggle-done-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--brfg);
+  cursor: pointer;
+  color: var(--brfg);
+  font-size: 13px;
+  padding: 8px 0 0 0;
+  margin: 8px 0;
+  text-align: center;
+  display: none;
+}
+
+.toggle-done-btn:hover {
+  border-top-color: var(--fg);
+  color: var(--fg);
+}
+
+.error {
+  background: var(--brbg);
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  display: none;
+}
+
+.status {
+  font-size: 14px;
+  color: var(--brfg);
+  margin-bottom: 16px;
+  display: none;
+}
+
+.error.visible,
+.status.visible,
+.toggle-done-btn.visible {
+  display: block;
+}
+
+.empty {
+  text-align: center;
+  color: var(--brfg);
+  padding: 32px;
+}
+
+.settings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.settings-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  color: var(--fg);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--brfg);
+  font-size: 18px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--fg);
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: var(--brfg);
+  margin-bottom: 8px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-label {
+  font-size: 13px;
+  color: var(--brfg);
+  white-space: nowrap;
+}
+
+.table-input {
+  flex: none;
+  width: 90px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.modal-section {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--brbg);
+  border-radius: 4px;
+}
+
+.modal-section summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.modal-section ul,
+.modal-section ol {
+  margin-left: 20px;
+  margin-top: 8px;
+  line-height: 1.8;
+}
+
+.modal-section ol ul {
+  margin-top: 4px;
+}
+
+.btn-full {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.clear-btn {
+  width: 100%;
+  text-align: center;
+  color: var(--brfg);
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.clear-btn:hover {
+  color: var(--fg);
+}
