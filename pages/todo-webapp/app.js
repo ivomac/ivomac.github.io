@@ -87,7 +87,7 @@ async function saveSettings() {
   localStorage.setItem('turso_token', token);
 
   hideSettings();
-  hideError();
+  hideMessage();
   await initDatabase();
   await loadTodos();
 }
@@ -180,13 +180,11 @@ async function fetchTodos() {
 async function loadTodos() {
   try {
     showStatus('Loading...');
-    hideError();
     todos = await fetchTodos();
     renderTodos();
-    hideStatus();
+    hideMessage();
   } catch (err) {
     showError(`Failed to load todos: ${err.message}`);
-    hideStatus();
   }
 }
 
@@ -242,7 +240,7 @@ async function copyToClipboard(id) {
   try {
     await navigator.clipboard.writeText(item.content);
     showStatus('Copied!');
-    setTimeout(hideStatus, 1500);
+    setTimeout(hideMessage, 1500);
   } catch (err) {
     showError('Failed to copy to clipboard');
   }
@@ -288,26 +286,23 @@ function renderTodos() {
 }
 
 function showError(message) {
-  const el = document.getElementById('error');
+  const el = document.getElementById('message');
   el.textContent = message;
-  el.classList.add('visible');
+  el.classList.add('visible', 'error');
   clearTimeout(errorDismissTimer);
-  errorDismissTimer = setTimeout(hideError, 5000);
-}
-
-function hideError() {
-  clearTimeout(errorDismissTimer);
-  document.getElementById('error').classList.remove('visible');
+  errorDismissTimer = setTimeout(hideMessage, 5000);
 }
 
 function showStatus(message) {
-  const el = document.getElementById('status');
+  const el = document.getElementById('message');
   el.textContent = message;
+  el.classList.remove('error');
   el.classList.add('visible');
 }
 
-function hideStatus() {
-  document.getElementById('status').classList.remove('visible');
+function hideMessage() {
+  clearTimeout(errorDismissTimer);
+  document.getElementById('message').classList.remove('visible', 'error');
 }
 
 const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };

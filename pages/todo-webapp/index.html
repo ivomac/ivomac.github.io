@@ -21,10 +21,8 @@
           <label for="tableInput" class="table-label">Table:</label>
           <input type="text" id="tableInput" class="table-input" placeholder="todo" autocomplete="off">
         </div>
+        <span id="message" class="header-message"></span>
       </div>
-
-      <div id="error" class="error"></div>
-      <div id="status" class="status"></div>
 
       <div class="input-group">
         <input type="text" id="newTodoInput" placeholder="Add new todo..." autocomplete="off">
@@ -83,8 +81,8 @@
         <summary>How to Use</summary>
         <ul>
           <li><strong>Add items:</strong> Type in the input field and press Enter or click +</li>
-          <li><strong>Mark done:</strong> Hover over an item and click ✓</li>
-          <li><strong>Copy items:</strong> Hover over an item and click 📋</li>
+          <li><strong>Mark done:</strong> Double-click an item to mark it complete or restore it</li>
+          <li><strong>Copy items:</strong> Click 📋 on an item to copy its text</li>
           <li><strong>Refresh:</strong> Click the 🔄 icon to reload from Turso</li>
         </ul>
       </details>
