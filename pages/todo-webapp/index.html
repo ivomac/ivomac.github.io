@@ -16,17 +16,23 @@
     <div class="card">
       <div class="header">
         <div class="header-actions">
-          <button id="refreshBtn" class="btn" title="Refresh">🔄</button>
-          <button id="settingsBtn" class="btn" title="Settings">⚙️</button>
-          <label for="tableInput" class="table-label">Table:</label>
-          <input type="text" id="tableInput" class="table-input" placeholder="todo" autocomplete="off">
+          <button id="refreshBtn" class="btn btn-icon-only" title="Refresh"><span
+              class="icon icon-refresh"></span></button>
+          <button id="settingsBtn" class="btn btn-icon-only" title="Settings"><span
+              class="icon icon-gear"></span></button>
+          <label for="listSelect" class="list-label">List:</label>
+          <select id="listSelect" class="list-select"></select>
+          <button id="addListBtn" class="btn btn-icon-only" title="New list"><span
+              class="icon icon-plus"></span></button>
+          <button id="deleteListBtn" class="btn btn-icon-only btn-destructive" title="Delete list"><span
+              class="icon icon-trash"></span></button>
         </div>
         <span id="message" class="header-message"></span>
       </div>
 
       <div class="input-group">
         <input type="text" id="newTodoInput" placeholder="Add new todo..." autocomplete="off">
-        <button id="addBtn" class="btn">+</button>
+        <button id="addBtn" class="btn btn-icon-only" title="Add"><span class="icon icon-plus"></span></button>
       </div>
 
       <div id="todoList"></div>
@@ -39,52 +45,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>Settings</h2>
-        <button id="closeSettingsBtn" class="close-btn" title="Close">✕</button>
+        <button id="closeSettingsBtn" class="close-btn" title="Close"><span class="icon icon-xmark"></span></button>
       </div>
 
       <details class="modal-section">
         <summary>Description</summary>
-        <ul>
-          <li>Todo list backed by your own <a href="https://turso.tech" target="_blank">Turso</a> (SQLite) database.</li>
-          <li>Access and edit your todos from anywhere.</li>
-          <li><strong>Warning:</strong> Credentials are stored in <code>localStorage</code> only — no cookies or other storage. "Clear Credentials" removes them entirely.</li>
-        </ul>
+        <p>
+          Todo list backed by your own <a href="https://turso.tech" target="_blank">Turso</a> (SQLite) database. Access
+          and edit todos from anywhere. Credentials are stored in <code>localStorage</code> only.
+        </p>
       </details>
 
       <details class="modal-section">
         <summary>How to Setup</summary>
         <ol>
-          <li>Create a free account at <a href="https://turso.tech" target="_blank">turso.tech</a></li>
-          <li>Create a database:
-            <ul>
-              <li>Via CLI: <code>turso db create my-todos</code></li>
-              <li>Or via the Turso web dashboard</li>
-            </ul>
-          </li>
-          <li>Get the DB URL:
-            <ul>
-              <li>Via CLI: <code>turso db show my-todos --url</code></li>
-              <li>Looks like <code>libsql://my-todos-org.turso.io</code></li>
-            </ul>
-          </li>
-          <li>Create an auth token:
-            <ul>
-              <li>Via CLI: <code>turso db tokens create my-todos</code></li>
-              <li>Or via the Turso web dashboard</li>
-            </ul>
-          </li>
-          <li>Enter the URL and token below and save</li>
+          <li>Create a free account at <a href="https://turso.tech" target="_blank">turso.tech</a>.</li>
+          <li>Create a database.</li>
+          <li>Get the DB URL.</li>
+          <li>Create an auth token (<a href="https://docs.turso.tech/sdk/authentication" target="_blank">docs</a>).</li>
+          <li>Enter the URL and token below.</li>
         </ol>
-      </details>
-
-      <details class="modal-section">
-        <summary>How to Use</summary>
-        <ul>
-          <li><strong>Add items:</strong> Type in the input field and press Enter or click +</li>
-          <li><strong>Mark done:</strong> Double-click an item to mark it complete or restore it</li>
-          <li><strong>Copy items:</strong> Click 📋 on an item to copy its text</li>
-          <li><strong>Refresh:</strong> Click the 🔄 icon to reload from Turso</li>
-        </ul>
       </details>
 
       <p>Turso DB URL:</p>

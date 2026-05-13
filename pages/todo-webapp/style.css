@@ -4,6 +4,33 @@
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  vertical-align: -0.125em;
+}
+
+.icon-refresh       { mask-image: url('/assets/icons/arrows-rotate.svg'); }
+.icon-gear          { mask-image: url('/assets/icons/gear.svg'); }
+.icon-plus          { mask-image: url('/assets/icons/plus.svg'); }
+.icon-trash         { mask-image: url('/assets/icons/trash.svg'); }
+.icon-xmark         { mask-image: url('/assets/icons/xmark.svg'); }
+.icon-copy          { mask-image: url('/assets/icons/copy.svg'); }
+.icon-chevron-up    { mask-image: url('/assets/icons/chevron-up.svg'); }
+.icon-chevron-down  { mask-image: url('/assets/icons/chevron-down.svg'); }
+.icon-square        { mask-image: url('/assets/icons/square-regular.svg'); }
+.icon-square-check  { mask-image: url('/assets/icons/square-check-regular.svg'); }
+
 body {
   background: var(--brbg);
   padding: 0;
@@ -18,7 +45,8 @@ body {
   background: var(--bg);
   border-radius: 8px;
   padding: 16px;
-  margin-bottom: 0;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .header {
@@ -35,7 +63,7 @@ body {
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .btn:hover {
@@ -45,6 +73,10 @@ body {
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.btn-icon-only {
+  padding: 8px;
 }
 
 .input-group {
@@ -59,9 +91,15 @@ input[type="password"] {
   padding: 8px 12px;
   border: 1px solid var(--brfg);
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 0.9rem;
   background: var(--bg);
   color: var(--fg);
+  transition: border-color 0.15s;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+  border-color: var(--fg);
 }
 
 .todo-item {
@@ -72,12 +110,14 @@ input[type="password"] {
   background: var(--brbg);
   border-radius: 4px;
   margin-bottom: 8px;
-  cursor: pointer;
-  user-select: none;
 }
 
 .todo-item:hover {
   background: var(--brblack);
+}
+
+.done-item {
+  opacity: 0.8;
 }
 
 .todo-text {
@@ -90,15 +130,55 @@ input[type="password"] {
   border: none;
   cursor: pointer;
   padding: 4px;
-  font-size: 14px;
+  font-size: 0.9rem;
+}
+
+.check-btn {
+  color: var(--brfg);
+}
+
+.todo-item:hover .check-btn {
+  color: var(--fg);
+}
+
+.check-btn:hover {
+  color: var(--blue);
+}
+
+.done-item .check-btn {
+  color: var(--blue);
+}
+
+.done-item:hover .check-btn {
+  color: var(--fg);
+}
+
+.done-item .check-btn:hover {
+  color: var(--brblue);
 }
 
 .copy-btn {
   color: var(--brfg);
 }
 
-.copy-btn:hover {
+.todo-item:hover .copy-btn {
   color: var(--fg);
+}
+
+.copy-btn:hover {
+  color: var(--brblue);
+}
+
+.delete-btn {
+  color: var(--brfg);
+}
+
+.todo-item:hover .delete-btn {
+  color: var(--fg);
+}
+
+.delete-btn:hover {
+  color: var(--red);
 }
 
 .toggle-done-btn {
@@ -108,7 +188,7 @@ input[type="password"] {
   border-top: 1px solid var(--brfg);
   cursor: pointer;
   color: var(--brfg);
-  font-size: 13px;
+  font-size: 0.8rem;
   padding: 8px 0 0 0;
   margin: 8px 0;
   text-align: center;
@@ -127,7 +207,7 @@ input[type="password"] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 0.8rem;
   color: var(--brfg);
   padding-left: 12px;
   display: none;
@@ -135,6 +215,7 @@ input[type="password"] {
 
 .header-message.visible {
   display: block;
+  cursor: pointer;
 }
 
 .header-message.error {
@@ -184,7 +265,7 @@ input[type="password"] {
 }
 
 .modal-content h2 {
-  font-size: 20px;
+  font-size: 1.2rem;
   color: var(--fg);
 }
 
@@ -193,7 +274,7 @@ input[type="password"] {
   border: none;
   cursor: pointer;
   color: var(--brfg);
-  font-size: 18px;
+  font-size: 1.1rem;
   padding: 0 4px;
   line-height: 1;
 }
@@ -202,8 +283,8 @@ input[type="password"] {
   color: var(--fg);
 }
 
-.modal-content p {
-  font-size: 14px;
+.modal-content > p {
+  font-size: 0.9rem;
   color: var(--brfg);
   margin-bottom: 8px;
 }
@@ -219,17 +300,29 @@ input[type="password"] {
   gap: 8px;
 }
 
-.table-label {
-  font-size: 13px;
+.list-label {
+  font-size: 0.8rem;
   color: var(--brfg);
   white-space: nowrap;
 }
 
-.table-input {
-  flex: none;
-  width: 90px;
+.list-select {
   padding: 6px 8px;
-  font-size: 13px;
+  font-size: 0.8rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--brfg);
+  border-radius: 4px;
+  cursor: pointer;
+  max-width: 120px;
+}
+
+.btn-destructive {
+  background: var(--red);
+}
+
+.btn-destructive:hover {
+  background: var(--brred);
 }
 
 .modal-section {
@@ -269,7 +362,7 @@ input[type="password"] {
   border: none;
   padding: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .clear-btn:hover {
