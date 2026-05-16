@@ -16,11 +16,12 @@ const SITE_STRUCTURE = {
     // Projects
     'projects/ETL': { name: '🔧 ETL Pipeline', path: '/pages/projects/ETL/index.html' },
     'projects/coup': { name: '🗡️ PettingZoo Coup', path: '/pages/projects/coup/index.html' },
+    'projects/toothpick': { name: '⌨️ Neovim Plugin', path: '/pages/projects/toothpick/index.html' },
+    'projects/todo_webapp': { name: '✅ Todo Webapp', path: '/pages/projects/todo_webapp/index.html' },
+    'projects/blackjack': { name: '🃏 Blackjack Solver', path: '/pages/projects/blackjack/index.html' },
     'projects/git_guide': { name: '🪣 Git Guide', path: '/pages/projects/git_guide/index.html' },
     'projects/llm_experiments': { name: '📊 LLM Experiments', path: '/pages/projects/llm_experiments/index.html' },
-    'projects/toothpick': { name: '⌨️ Neovim Plugin', path: '/pages/projects/toothpick/index.html' },
-    'projects/blackjack': { name: '🃏 Blackjack Solver', path: '/pages/projects/blackjack/index.html' },
-    // 'projects/cl_gen': { name: '✉️ Cover Letter Generator', path: '/pages/projects/cl_gen/index.html' },
+    'projects/cl_gen': { name: '✉️ Cover Letter Generator', path: '/pages/projects/cl_gen/index.html' },
 
     // Fun
     'fun/yes_no': { name: '🧩 Yes/No Game', path: '/pages/fun/yes_no/index.html' },
