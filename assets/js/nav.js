@@ -20,7 +20,7 @@ const SITE_STRUCTURE = {
     'projects/todo_webapp': { name: '✅ Todo Webapp', path: '/pages/projects/todo_webapp/index.html' },
     'projects/blackjack': { name: '🃏 Blackjack Solver', path: '/pages/projects/blackjack/index.html' },
     'projects/git_guide': { name: '🪣 Git Guide', path: '/pages/projects/git_guide/index.html' },
-    'projects/llm_experiments': { name: '📊 LLM Experiments', path: '/pages/projects/llm_experiments/index.html' },
+    'projects/llm_experiments': { name: '📊 LLM Doubt', path: '/pages/projects/llm_experiments/index.html' },
     'projects/cl_gen': { name: '✉️ Cover Letter Generator', path: '/pages/projects/cl_gen/index.html' },
 
     // Fun

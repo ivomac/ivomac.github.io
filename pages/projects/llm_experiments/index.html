@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ivo Maceira LLM Experiments</title>
+  <title>Ivo Maceira LLM Doubt</title>
   <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 </head>
 
@@ -12,30 +12,45 @@
   <script src="/assets/js/nav.js"></script>
 
   <main>
-    <h2><a href="https://docs.google.com/document/d/1LbG9zG2ppu3uZNk0rkMUZ__FLBk6dpoqeuEPJC23mAo">📊 LLM Experiments</a>
-    </h2>
+    <h2><a href="https://github.com/ivomac/llm-doubt">📊 Prompt-Induced Answer Abstention in LLMs</a></h2>
 
     <p>
-      LLMs often hallucinate or show overconfidence when giving information. This is a huge block in their reliability
-      and potential usage as independent thinking agents.
+      LLMs often hallucinate or show overconfidence — a major barrier to reliable use. This project tests
+      whether a simple prompt addition ("you may leave the answer blank if you don't know") makes models
+      selectively doubt their wrong answers rather than indiscriminately suppressing all answers.
     </p>
+
     <p>
-      In this project I studied the effect of instructing LLMs to not answer a question if they don't
-      know the answer, and then ask it questions on obscure facts. I analyse the effects of the prompt on accuracy,
-      changes in the fraction of "correct", "incorrect", and "don't know" answers.
+      I tested 9 dense open-source models on 247 obscure factual questions derived from random Wikipedia
+      pages under two system prompts: a baseline specifying only the answer format, and one that additionally
+      instructs the model to leave the answer blank when uncertain. A judge model classified responses as
+      CORRECT, INCORRECT, or DOUBT.
     </p>
+
     <p>
-      The results show that most models are more likely to say "I don't know" when they had previously
-      answered incorrectly, resulting in higher accuracy. Some model dependence is observed that seems dependent on
-      whether the model "reasons", with reasoning models saying "I don't know" less often.
+      The key result: under the "suggest empty" prompt, incorrect answers transitioned to DOUBT at roughly
+      twice the rate of correct answers — the 95% confidence interval for the difference is entirely above zero:
     </p>
+
+    <ul>
+      <li><b>INC → D</b>: 0.174 [95% CI: 0.152, 0.197]</li>
+      <li><b>C → D</b>: 0.095 [95% CI: 0.064, 0.131]</li>
+      <li><b>Difference</b>: 0.079 [95% CI: 0.039, 0.118]</li>
+    </ul>
+
     <p>
-      The mini-paper can be found in <a
-        href="https://docs.google.com/document/d/1LbG9zG2ppu3uZNk0rkMUZ__FLBk6dpoqeuEPJC23mAo">this Google doc</a>,
-      while the source code is on <a href="https://github.com/ivomac/llm_overconfidence">Github</a>.
+      The effect varies substantially across model families. GPT-oss models show no evidence of selective
+      abstention (CIs include zero), while the largest differences appear in Llama-405B and Qwen-72B, which
+      also have the highest baseline accuracy. Reasoning models (DeepSeek variants) sit closer to the
+      GPT end of the spectrum.
     </p>
+
+    <p>
+      Source code, full report, and analysis scripts on <a href="https://github.com/ivomac/llm-doubt">GitHub</a>.
+    </p>
+
     <div class="plot-container">
-      <img src="/assets/images/projects/llm_experiments/analysis.png">
+      <img src="/assets/images/projects/llm_experiments/per_model_ci.png">
     </div>
   </main>
 
